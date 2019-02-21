@@ -31,10 +31,10 @@ optional arguments:
 -h, --help            show this help message and exit
 
 -d, --delimiter DELIMITER
-                        specify what delimiter to use (default: ascending)
+                        specify what delimiter to use (default: '/n')
 
 -o, --order {ascending,descending}
-                        specify how numbers should be ordered (default: '/n')
+                        specify how numbers should be ordered (default: ascending)
 
 -s, --sorting-algorithm {bubble,insertion,selection}
                         specify what sorting algorithm to use (default: selection)
