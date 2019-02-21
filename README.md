@@ -45,7 +45,7 @@ Our example file, `example.txt` contains the following:
 ```
 6, 9, 3, 4, 1, 7, 2, 5, 8
 ```
-Running following command will sort our example file in descending oreder using the selection sort algorithm
+Running following command will sort our example file in descending order using the selection sort algorithm.
 ```
 python number_sorter.py example.txt sorted_examples.txt -d ', ' -o descending -s selection
 ```
@@ -79,11 +79,10 @@ def sort_bubble(numbers):
 [Source](https://en.wikipedia.org/wiki/Selection_sort)
 
 ```python
-def sort_insertion(numbers):
-  for index in range(1, len(numbers)):
-    for i in reversed(range(index)):
-      if numbers[index] < numbers[i]:
-        numbers[index], numbers[i] = numbers[i], numbers[index]
+def sort_selection(numbers):
+  for index in range(len(numbers)):
+        index_min = index + numbers[index:].index(min(numbers[index:]))
+        numbers[index], numbers[index_min] = numbers[index_min], numbers[index]
   return numbers
 ```
 
@@ -93,10 +92,12 @@ def sort_insertion(numbers):
 [Source](https://en.wikipedia.org/wiki/Insertion_sort)
 
 ```python
-def sort_selection(numbers):
-  for index in range(len(numbers)):
-        index_min = index + numbers[index:].index(min(numbers[index:]))
-        numbers[index], numbers[index_min] = numbers[index_min], numbers[index]
+def sort_insertion(numbers):
+  for index in range(1, len(numbers)):
+    for i in reversed(range(index)):
+      if numbers[index] < numbers[i]:
+        numbers[index], numbers[i] = numbers[i], numbers[index]
+      else: break
   return numbers
 ```
 
@@ -104,7 +105,7 @@ def sort_selection(numbers):
 
 ## Authors
 
-* **Michel Dequick** - [GitHub]([https://github.com/PurpleBooth](https://github.com/MichelDequick))
+* **Michel Dequick** - [GitHub](https://github.com/MichelDequick), [LinkedIn](https://www.linkedin.com/in/michel-dequick-839927144/)
 
 See also the list of [contributors](https://github.com/MichelDequick/number-sorter/contributors) who participated in this project.
 
