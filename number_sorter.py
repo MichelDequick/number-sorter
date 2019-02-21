@@ -16,6 +16,7 @@ def sort_insertion(numbers):
     for i in reversed(range(index)):
       if numbers[index] < numbers[i]:
         numbers[index], numbers[i] = numbers[i], numbers[index]
+      else: break
   return numbers
 
 # Selection sorting algorithm
