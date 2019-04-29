@@ -63,6 +63,7 @@ The resulting `sorted_examples.txt` will contain the following:
 ![](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
 [Source](https://en.wikipedia.org/wiki/Bubble_sort)
 
+#### Implementation:
 ```python
 def sort_bubble(numbers):
   for sorted in reversed(range(len(numbers[1:]))):
@@ -78,6 +79,7 @@ def sort_bubble(numbers):
 ![](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif)
 [Source](https://en.wikipedia.org/wiki/Selection_sort)
 
+#### Implementation:
 ```python
 def sort_selection(numbers):
   for index in range(len(numbers)):
@@ -91,6 +93,7 @@ def sort_selection(numbers):
 ![](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
 [Source](https://en.wikipedia.org/wiki/Insertion_sort)
 
+#### Implementation:
 ```python
 def sort_insertion(numbers):
   for index in range(1, len(numbers)):
