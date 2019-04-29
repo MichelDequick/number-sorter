@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import argparse
+from argparse import RawTextHelpFormatter
 
 # Bubble sorting algorithm
 def sort_bubble(numbers):
@@ -28,28 +29,30 @@ def sort_selection(numbers):
 
 # Argument parser
 parser = argparse.ArgumentParser()
-parser = argparse.ArgumentParser(description='Sort a file containing numbers')
+parser = argparse.ArgumentParser(description='Sort a file containing numbers', formatter_class=RawTextHelpFormatter)
 parser.add_argument('file_in',  
                     type=str,  
                     help='file containing unsorted numbers')
 parser.add_argument('file_out', 
-                    type=str, 
+                    type=str,
                     nargs='?',
-                    default='sorted_numbers.txt', 
-                    help='file to write sorted number to')
+                    help='file to write sorted number to \n(Default: input file)')
 parser.add_argument('-d','--delimiter',
                     type=str,
                     default='\n', 
-                    help='specify what delimiter to use')
+                    help='specify what delimiter to use \n(Default: \"\\n\")')
 parser.add_argument('-o','--order',
                     choices=['ascending','descending'],
                     default='ascending',
-                    help='specify how numbers should be ordered')
+                    help='specify how numbers should be ordered \n(Default: ascending)')
 parser.add_argument('-s','--sorting-algorithm',
                     choices=['bubble','insertion','selection'],
                     default='selection',
-                    help='specify what sorting algorithm to use')
+                    help='specify what sorting algorithm to use \n(Default: selection)')
 args = parser.parse_args()
+
+# Write to input file if no output file is defined
+if not args.file_out : args.file_out = args.file_in
 
 
 # Read file
