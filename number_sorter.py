@@ -55,18 +55,22 @@ args = parser.parse_args()
 if not args.file_out : args.file_out = args.file_in
 
 
-# Read file
-numbers = list(map(int, open(args.file_in,'r').read().split(args.delimiter)))
+def main():
+  # Read file
+  numbers = list(map(int, open(args.file_in,'r').read().split(args.delimiter)))
 
-# Sort numbers
-{
-    'bubble' : sort_bubble(numbers),
-    'insertion' : sort_insertion(numbers),
-    'selection' : sort_selection(numbers)
-}[str(args.sorting_algorithm)]
+  # Sort numbers
+  {
+      'bubble' : sort_bubble(numbers),
+      'insertion' : sort_insertion(numbers),
+      'selection' : sort_selection(numbers)
+  }[str(args.sorting_algorithm)]
 
-# Order ascending or descending
-if str(args.order) == 'descending' : numbers = reversed(numbers) 
+  # Order ascending or descending
+  if str(args.order) == 'descending' : numbers = reversed(numbers) 
 
-# Write file
-open(args.file_out, 'w').write(args.delimiter.join(map(str, numbers)))
+  # Write file
+  open(args.file_out, 'w').write(args.delimiter.join(map(str, numbers)))
+
+if __name__ == '__main__':
+    main()
