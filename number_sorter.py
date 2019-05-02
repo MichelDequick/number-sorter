@@ -5,7 +5,7 @@ from argparse import RawTextHelpFormatter
 
 # Bubble sorting algorithm
 def sort_bubble(numbers):
-  for sorted in reversed(range(len(numbers[1:]))):
+  for sorted in reversed(range(len(numbers))):
       for index in range(len(numbers[:sorted])):
           if numbers[index] > numbers[index + 1]:
             numbers[index], numbers[index + 1] = numbers[index + 1], numbers[index]
